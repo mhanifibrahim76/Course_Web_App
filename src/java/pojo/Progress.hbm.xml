@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 26, 2024 8:20:19 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.Progress" table="progress" catalog="study_room" optimistic-lock="version">
+        <id name="progressId" type="java.lang.Integer">
+            <column name="progress_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="courses" class="pojo.Courses" fetch="select">
+            <column name="course_id" />
+        </many-to-one>
+        <many-to-one name="users" class="pojo.Users" fetch="select">
+            <column name="user_id" />
+        </many-to-one>
+        <property name="progressPercentage" type="java.lang.Integer">
+            <column name="progress_percentage" />
+        </property>
+        <property name="lastAccessed" type="timestamp">
+            <column name="last_accessed" length="19" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

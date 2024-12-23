@@ -1,0 +1,1058 @@
+*{
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
+
+section{
+    padding: 2rem 9%;
+}
+
+.username-display {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+
+
+/* Heading : css start */
+.heading{
+    text-align: center;
+    font-size: 4rem;
+    color: #393E46;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    margin-top:  5rem;
+    background: #9EC8B9;
+}
+
+.heading span{
+    color: #1B4242;
+}
+/* Heading : css end */
+
+/* Style for the form container */
+#reviewForm {
+    background-color: #f9f9f9;  /* Light gray background */
+    border-radius: 8px;         /* Rounded corners */
+    padding: 20px;              /* Padding inside the form */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    max-width: 600px;           /* Maximum width of the form */
+    margin: 20px auto;          /* Center the form */
+}
+
+/* Style for the panel grid */
+h:panelGrid {
+    width: 100%;                /* Full width */
+}
+
+/* Style for labels */
+h:outputLabel {
+    font-weight: bold;          /* Bold labels */
+    margin-bottom: 10px;       /* Space below labels */
+}
+
+/* Style for input text areas */
+h:inputTextarea {
+    width: 100%;                /* Full width */
+    height: auto;              /* Automatic height */
+    border: 1px solid #ccc;     /* Border around the textarea */
+    border-radius: 4px;         /* Rounded corners */
+    padding: 10px;              /* Padding inside the textarea */
+    font-size: 14px;            /* Font size */
+    transition: border-color 0.3s; /* Smooth border color transition */
+}
+
+/* Style for select menus */
+h:selectOneMenu {
+    width: 100%;                /* Full width */
+    border: 1px solid #ccc;     /* Border around the select menu */
+    border-radius: 4px;         /* Rounded corners */
+    padding: 10px;              /* Padding inside the select menu */
+    font-size: 14px;            /* Font size */
+    background-color: #fff;     /* White background */
+    transition: border-color 0.3s; /* Smooth border color transition */
+}
+
+/* Style for the submit button */
+h:commandButton {
+    background-color: #4CAF50;  /* Green background */
+    color: white;               /* White text */
+    border: none;               /* No border */
+    border-radius: 4px;        /* Rounded corners */
+    padding: 10px 15px;        /* Padding inside the button */
+    font-size: 16px;           /* Font size */
+    cursor: pointer;           /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+/* Hover effect for the submit button */
+h:commandButton:hover {
+    background-color: #45a049;  /* Darker green on hover */
+}
+
+/* Required field validation message */
+h:message {
+    color: red;                /* Red color for error messages */
+    font-size: 12px;          /* Font size for error messages */
+    margin-top: 5px;          /* Space above error messages */
+}
+
+
+/* button : css start */
+.btn{
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    background: #393E46;
+    color: white;
+    padding: .9rem 3.5rem;
+    font-size: 1.5rem;
+}
+
+.btn:hover{
+    background: #00ADB5;
+}
+
+.btn-logout {
+    margin-right: 1rem;
+    display: inline-block;
+    border-radius: 2.5rem;
+    background: #393E46;
+    color: white;
+    padding: .9rem 3.5rem;
+    font-size: 1.5rem;
+}
+
+.btn-logout:hover {
+    background: #00ADB5;
+}
+
+/* button : css end */
+
+
+
+/* header : css start*/
+header{
+    position: fixed;
+    top: 0; right: 0;left: 0;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,0.1);
+    padding: 2rem 9%;
+    z-index: 1000;
+}
+
+.icons{
+    display: flex;
+}
+
+.icons img{
+    width: 20px;
+}
+
+header .logo{
+    font-size: medium;
+    color: #222831;
+    font-weight: bolder;
+}
+
+header .logo span{
+    color: #00ADB5;
+}
+
+header .navbar a{
+    font-size: 2rem;
+    padding: 0 1.5rem;
+    color: #393E46;
+}
+
+header .navbar a:hover{
+    color: #00ADB5;
+}
+
+header #toggler{
+    display: none;
+}
+
+header .bars{
+    font-size: 2.5rem;
+    color: #393E46;
+    border-radius: .5rem;
+    padding: .5rem 1rem;
+    border: .1rem solid rgba(0,0,0,0.3);
+    display: none;
+}
+/* header : css end */
+
+
+
+/* Home section : css start */
+/* Home section : css start */
+.home{
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.home .background-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Ensure the image stays behind the content */
+}
+
+.home .content{
+    max-width: 50rem;
+}
+
+.home .content h3{
+    font-size: 5rem;
+    color: black;
+}
+
+.home .content span{
+    font-size: 2.5rem;
+    color: #00ADB5;
+    padding: 1rem 0;
+    line-height: 1.5;
+}
+
+.home .content p{
+    font-size: 1.5rem;
+    color: #393E46;
+    padding: 1rem 0;
+    line-height: 1.5;
+}
+/* Home section : css end */
+
+
+
+/* About section : css start */
+.about .row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    padding: 2rem 0;
+    padding-bottom: 3rem;
+}
+
+.about .row .video-container{
+    flex: 1 1 40rem;
+    position: relative;
+}
+
+.about .row .video-container video{
+    width: 100%;
+    border: 1.5rem solid #EEEEEE;
+    border-radius: .5rem;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,0.1);
+    height: 100%;
+    object-fit: cover;
+}
+
+.about .row .video-container h3{
+    position: absolute;
+    top: 50%;
+    font-size: 3rem;
+    background: #EEEEEE;
+    width: 100%;
+    padding: 1rem 2rem;
+    text-align: center;
+    mix-blend-mode: screen;
+}
+
+.about .row .content{
+    flex: 1 1 40rem;
+}
+
+.about .row .content h3{
+    font-size: 3rem;
+    color: #393E46;
+}
+
+.about .row .content p{
+    font-size: 1.5rem;
+    color: #999;
+    padding: .5rem;
+    padding-top: 1rem 0;
+    line-height: 1.5;
+}
+/* About section : css end */
+
+
+
+/* Contact section : css start */
+.contact .row{
+    display: flex;
+    flex-wrap: wrap-reverse;
+}
+
+.contact .row form{
+    flex: 1 1 40rem;
+    padding: 2rem 2.5rem;
+    box-shadow: 0 .5rem 1.5rem rgba(0,0,0,0.1);
+    border: .1rem solid rgba(0,0,0,0.1);
+    border-radius: .5rem;
+    background: #EEEEEE;
+}
+
+.contact .row form .box{
+    padding: 1rem;
+    font-size: 1.5rem;
+    color: #393E46;
+    text-transform: none;
+    border: .1rem solid rgba(0,0,0,0.1);
+    border-radius: .5rem;
+    margin: .5rem 0;
+    width: 100%;
+}
+
+.contact .row form .box:focus{
+    border-color: #00ADB5;
+}
+
+.contact .row form textarea{
+    height: 15rem;
+    resize: none;
+}
+
+.contact .row .image{
+    flex: 1 1 40rem;
+}
+
+.contact .row .image{
+    width: 100%;
+}
+
+.contact img{
+    width: 400px;
+}
+/* Contact section : css end */
+
+
+
+/* Courses section : css start */
+
+.product .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.product .box-container .box{
+    flex: 1 1 30rem;
+    box-shadow: 0 .5 1.5rem rgba(0,0,0,0.1);
+    border-radius: .5rem;
+    border: .1rem solid rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.product .box-container .box .discount{
+    position: absolute;
+    top: 1rem; left: 1rem;
+    padding: .7rem 1rem;
+    font-size: 2rem;
+    color: #9EC8B9;
+    background: #1B4242;
+    border-radius: .5rem;
+    z-index: 1;
+}
+
+.product .box-container .box .image{
+    position: relative;
+    text-align: center;
+    padding: 2rem;
+    overflow: hidden;
+}
+
+.product .box-container .box .image img{
+    height: 25rem;
+}
+
+.product .box-container .box:hover .image img{
+    transform: scale(1.1);
+}
+
+.product .box-container .box .image .icon{
+    display: flex;
+    bottom: -7rem; left: 0; right: 0;
+    position: absolute;
+    justify-content: center;
+}
+
+.product .box-container .box:hover .image .icon{
+    bottom: 0;
+}
+
+.product .box-container .box .image .icon button{
+    height: 5rem;
+    line-height: 5rem;
+    font-size: 2rem;
+    width: 100%;
+    background: #1B4242;
+    color: white;padding: 0;
+}
+
+.product .box-container .box .image .icon a{
+    height: 5rem;
+    line-height: 5rem;
+    font-size: 2rem;
+    width: 100%;
+    background: #1B4242;
+    color: white;
+    padding: 0;
+}
+
+.product .box-container .box .image .icon a:hover{
+    background: #9EC8B9;
+}
+
+.product .box-container .box .image .icon button:hover{
+    background: #9EC8B9;
+}
+
+
+.product .box-container .box .content{
+    padding: 2rem;
+    text-align: center;
+}
+
+.product .box-container .box .content h3{
+    font-size: 2.5rem;
+    color: #393E46;
+}
+
+.product .box-container .box .content .price{
+    font-size: 2.5rem;
+    color: #9EC8B9;
+    font-weight: bolder;
+    padding-top: 1rem;
+}
+
+.product .box-container .box .content span{
+    font-size: 1.5rem;
+    color: #393E46;
+    font-weight: lighter;
+    text-decoration: line-through
+}
+/* Courses section : css end */
+
+/* Footer section : css start */
+.footer .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.footer .box-container .box{
+    flex: 1 1 25rem;
+}
+
+.footer .box-container .box h3{
+    color: #393E46;
+    font-size: 2.5rem;
+    padding: 1rem 0;
+}
+
+.footer .box-container .box a{
+    display: block;
+    color: #999;
+    font-size: 1.5rem;
+    padding: 1rem 0;
+}
+
+.footer .box-container .box a:hover{
+    color: #9EC8B9;
+    text-decoration: underline;
+}
+
+.footer .credit{
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    padding-top: 2.5rem;
+    font-size: 2rem;
+    color: #222831;
+    border-top: .1rem solid rgba(0,0,0,0.1);
+}
+
+.footer .credit span{
+    color: #9EC8B9;
+}
+/* Footer section : css end */
+
+
+
+/* Review section : css start */
+.review .container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.review h1 {
+    text-align: center;
+    color: #333;
+}
+
+.review .comment-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.review #commentInput {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.review .rating-input {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.review .rating-input span {
+    margin-right: 10px;
+}
+
+.review .comment-form button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.review .comment-form button:hover {
+    background-color: #0056b3;
+}
+
+.review .comments-container {
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.review .comment {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.review .star {
+    color: gold;
+}
+
+.review .comment-rating {
+    font-weight: bold;
+    color: #007BFF;
+    margin-bottom: 10px;
+}
+
+.review .user {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.review .user img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.review .user-info h3 {
+    margin: 0;
+}
+
+.review .user-info span {
+    color: #888;
+}
+
+.review .comment-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.review .comment-actions .commandButton {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.submit-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+
+.review .comment-actions .edit-button {
+    background-color: #28a745;
+    color: white;
+}
+
+.review .comment-actions .delete-button {
+    background-color: #dc3545;
+    color: white;
+}
+
+.review .review .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.review .box-container .box{
+    flex: 1 1 30rem;
+    box-shadow: 0 .5rem 1.5rem rgba(0,0,0,0.1);
+    border-radius: .5rem;
+    padding: 3rem 2rem;
+    position: relative;
+}
+
+.review .box-container .box .user{
+    display: flex;
+    align-items: center;
+    padding-top: 2rem;
+}
+
+.review .box-container .box .user img{
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1rem;
+}
+
+.review .box-container .box .user h3{
+    font-size: 2rem;
+    color: #393E46;
+}
+
+.review .box-container .box span{
+    font-size: 1.5rem;
+    color: #999;
+}
+
+.review .box-container .box p{
+    color: #999;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    padding-top: 2rem;
+}
+/* Review section : css end */
+
+
+
+/* Material section : css start */
+.material .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.material .box-container .box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.material .box-container .box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.material .box-container .box h2 {
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.material .box-container .box p {
+    color: #555;
+    line-height: 1.6;
+}
+/* Material section : css end */
+
+
+
+/* Styling untuk section exercise */
+#exercise {
+    padding: 50px 20px;
+    background-color: #f7f9fc;
+}
+
+/* Heading untuk section exercise */
+
+
+/* Container utama untuk quiz */
+.material-box {
+    max-width: 800px;
+    background-color: #ffffff;
+    margin: 0 auto; /* Center the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px 30px;
+    border-radius: 10px;
+}
+
+/* Box untuk pertanyaan */
+.question {
+    margin-bottom: 20px;
+}
+
+/* Styling untuk pertanyaan */
+.question p {
+    font-size: 18px;
+    color: #444;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* List untuk pilihan jawaban */
+.choices {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* Styling setiap pilihan jawaban */
+.choices li {
+    margin-bottom: 10px;
+    padding: 8px;
+    background-color: #f0f4f8;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.choices li:hover {
+    background-color: #e2e8f0;
+}
+
+/* Styling untuk selectOneRadio */
+.choices h\\:selectOneRadio {
+    display: inline-block;
+    margin-right: 10px; /* Memberi jarak antara radio button dan label */
+}
+
+/* Styling untuk item label */
+.choices li h\\:selectOneRadio f\\:selectItem {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Button untuk submit */
+.submit-button {
+    padding: 12px 20px;
+    background-color: #3498db; /* Warna tombol */
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 20px auto 0 auto; /* Center the button */
+    width: 200px; /* Lebar tombol */
+    text-align: center;
+}
+
+.submit-button:hover {
+    background-color: #2980b9; /* Warna tombol saat hover */
+}
+
+/* Output text untuk hasil */
+#results {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+
+/* Material section : css start */
+.material .box-container .box img{
+    width: 100%;
+}
+/* Material section : css end */
+
+/* Gaya umum untuk tabel */
+h:dataTable {
+    width: 100%; /* Membuat tabel memenuhi lebar kontainer */
+    border-collapse: collapse; /* Menghilangkan jarak antara border */
+    margin-top: 20px; /* Jarak atas tabel */
+}
+
+/* Gaya untuk header tabel */
+h:dataTable thead th {
+    background-color: #007bff; /* Warna latar belakang header */
+    color: white; /* Warna teks header */
+    padding: 10px; /* Ruang dalam header */
+    text-align: left; /* Menyelaraskan teks ke kiri */
+}
+
+/* Gaya untuk baris tabel */
+h:dataTable tbody tr {
+    border-bottom: 1px solid #dddddd; /* Garis bawah untuk setiap baris */
+}
+
+/* Gaya untuk sel tabel */
+h:dataTable tbody td {
+    padding: 10px; /* Ruang dalam sel */
+}
+
+/* Gaya untuk hover pada baris tabel */
+h:dataTable tbody tr:hover {
+    background-color: #f1f1f1; /* Warna latar belakang saat hover */
+}
+
+/* Gaya untuk tombol */
+h:commandButton {
+    background-color: #28a745; /* Warna latar belakang tombol */
+    color: white; /* Warna teks tombol */
+    border: none; /* Menghilangkan border default */
+    padding: 8px 12px; /* Ruang dalam tombol */
+    margin: 5px; /* Jarak antar tombol */
+    cursor: pointer; /* Mengubah kursor saat hover */
+    border-radius: 4px; /* Membuat sudut tombol melengkung */
+    transition: background-color 0.3s; /* Efek transisi saat hover */
+}
+
+/* Gaya untuk hover pada tombol */
+h:commandButton:hover {
+    background-color: #218838; /* Warna saat hover */
+}
+
+/* Gaya untuk tombol Edit dan Delete */
+.edit-button {
+    background-color: #007bff; /* Warna tombol Edit */
+}
+
+.edit-button:hover {
+    background-color: #0056b3; /* Warna saat hover tombol Edit */
+}
+
+.delete-button {
+    background-color: #dc3545; /* Warna tombol Delete */
+}
+
+.delete-button:hover {
+    background-color: #c82333; /* Warna saat hover tombol Delete */
+}
+
+
+
+
+/* Login & Register section : css start */
+
+.login{
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    background: #00ADB5 no-repeat;
+    background-size: cover;
+    justify-content: center;
+}
+
+
+.login .container {
+    display: flex;
+    background-color: #fff;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-inline: 2rem;
+}
+
+.login .container img {
+    width: 35rem;
+    height: 45rem;
+    object-fit: cover;
+    object-position: bottom;
+    border-radius: 10px;
+}
+
+.login .container form {
+    display: grid;
+    place-content: center;
+    row-gap: 1rem;
+    padding: 5rem;
+}
+
+.login .container form .header-text {
+    font-weight: 500;
+    padding-bottom: 10px;
+}
+
+.login .container form .input-group {
+    display: grid;
+    row-gap: 2rem;
+}
+
+.login .container form .input-group input {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+.login .container form p a {
+    color: #00ADB5;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.error{
+    color: red;
+}
+
+.comment-section{
+    display: block;
+}
+
+.comment-fix{
+    display: flex;
+    justify-content: center;
+}
+
+/* Login & Register section : css start */
+
+
+/* media queries */
+@media (max-width:991px) {
+    html{
+        font-size: 55%;
+    }
+
+    header{
+        padding: 2rem;
+    }
+
+    section{
+        padding: 2rem;
+    }
+
+    .home{
+        background-position: top;
+    }
+}
+
+@media (max-width:768px) {
+    header .bars{
+        display: block;
+    }
+
+    header .navbar{
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: white;
+        border-top: .1rem solid rgba(0,0,0,0.1);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    header #toggler:checked ~ .navbar{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    header .navbar a{
+        margin: 1.5rem;
+        padding: 1.5rem;
+        border: .1rem solid rgba(0,0,0,0.1);
+        display: block;
+        background: white;
+    }
+
+    .home .content h3{
+        font-size: 4.5rem;
+    }
+
+    .home .content span{
+        font-size: 2rem;
+    }
+
+    .heading{
+        font-size: 3rem;
+    }
+
+    .contact .image{
+        display: flex;
+        justify-content: center;
+    }
+
+    .contact img{
+        width: 300px;
+    }
+
+    .login .container {
+        display: block;
+        margin-inline: 1rem;
+        width: 400px;
+    }
+
+    .login .container img {
+        width: 100%;
+        height: 15rem;
+    }
+
+    .login .container form {
+        padding: 5rem;
+    }
+
+}

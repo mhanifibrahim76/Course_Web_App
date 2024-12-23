@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:h="http://xmlns.jcp.org/jsf/html" 
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns="http://www.w3.org/1999/xhtml" >
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Register</title>
+
+        <!-- Menggunakan h:outputStylesheet untuk file CSS -->
+        <link rel="stylesheet" href="./resources/css/style.css" />
+    </head>
+    <body>
+        <section class="login" id="register">
+            <div class="container">
+                <!-- Menggunakan h:graphicImage untuk image -->
+                <h:graphicImage name="bg-home.jpg" library="img" alt="" />
+
+                <h:form class="form" id="register-form">
+                    <h2 class="header-text">Registrasi</h2>
+
+                    <!-- Menampilkan pesan validasi atau error -->
+                    <h:messages globalOnly="true" styleClass="error" />
+
+                    <div class="input-group">
+                        <!-- Input untuk username -->
+                        <h:inputText id="username" value="#{loginBean.username}" 
+                                     required="true" 
+                                     requiredMessage="Username wajib diisi" 
+                                     styleClass="form-input">
+                            <f:passThroughAttribute name="placeholder" value="Username" />
+                        </h:inputText>
+                        <h:message for="username" styleClass="error" />
+
+                        <!-- Input untuk email -->
+                        <h:inputText id="email" value="#{loginBean.email}" 
+                                     required="true" 
+                                     requiredMessage="Email wajib diisi" 
+                                     validatorMessage="Email tidak valid" 
+                                     styleClass="form-input">
+                            <f:passThroughAttribute name="placeholder" value="Email" />
+                            <f:validateRegex pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,}$" />
+                        </h:inputText>
+                        <h:message for="email" styleClass="error" />
+
+                        <!-- Input untuk password -->
+                        <h:inputSecret id="password" value="#{loginBean.password}" 
+                                       required="true" 
+                                       requiredMessage="Password wajib diisi" 
+                                       styleClass="form-input">
+                            <f:passThroughAttribute name="placeholder" value="Password" />
+                        </h:inputSecret>
+                        <h:message for="password" styleClass="error" />
+
+                        <!-- Input untuk konfirmasi password -->
+                        <h:inputSecret id="confirm-password" value="#{loginBean.confirmPassword}" 
+                                       required="true" 
+                                       requiredMessage="Konfirmasi password wajib diisi" 
+                                       styleClass="form-input">
+                            <f:passThroughAttribute name="placeholder" value="Konfirmasi Password" />
+                        </h:inputSecret>
+                        <h:message for="confirm-password" styleClass="error" />
+
+                        <!-- Tombol submit -->
+                        <h:commandButton value="Registrasi" action="#{loginBean.register}" styleClass="btn" />
+                    </div>
+
+                    <p>Sudah punya akun? 
+                        <h:link outcome="login.xhtml" value="Login di sini" />
+                    </p>
+                </h:form>
+            </div>
+        </section>
+    </body>
+</html>

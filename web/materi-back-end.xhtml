@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      lang="en" >
+    <ui:composition template="template.xhtml">
+        <ui:define name="title">Home - Study Room</ui:define>
+
+        <ui:define name="content">
+            <!-- Material section start -->
+        <section class="material" id="material">
+            <h1 class="heading"> Course <span> Material </span> </h1>
+
+            <div class="box-container">
+                <div class="box">
+                    <h2>Back-end Development</h2>
+                    <p>Back-end development refers to the server-side of web development where applications, databases, and server configurations are managed. It focuses on the logic, database interactions, and server-side scripting necessary to power web applications and ensure their functionality. Back-end developers work with languages, frameworks, and tools that facilitate the server-side operations of websites and web applications.</p>
+                </div>
+
+                <div class="box">
+                    <h2>Server-Side Programming Languages</h2>
+                    <p>Java: A versatile language used in enterprise-level applications with frameworks like Spring Boot.<br />
+                    Python: Known for its simplicity and readability, often used with frameworks like Django and Flask.<br />
+                    PHP: Specifically designed for web development, commonly used with frameworks like Laravel and Symfony.<br />
+                    Ruby: Used with the Ruby on Rails framework, which emphasizes convention over configuration.<br />
+                    Node.js: Uses JavaScript to build scalable network applications, ideal for real-time applications and APIs.</p>
+                </div>
+
+                <div class="box">
+                    <h2>Database Management</h2>
+                    <p>Relational Databases: Structured data storage using SQL (Structured Query Language) for querying and managing data. Examples include MySQL, PostgreSQL, SQLite.<br />
+                    NoSQL Databases: Non-relational databases suitable for handling unstructured data and scalable applications. Examples include MongoDB, Redis, Cassandra.</p>
+                </div>
+            </div>
+        </section>
+        <!-- Material section end -->
+
+        <!-- Exercise section start -->
+        <section class="exercise" id="exercise">
+            <h1 class="heading"> Exercise <span> Material </span> </h1>
+            <div class="material-box">
+                <div class="box-container">
+                    <h:form id="quizForm">
+                        <div class="question">
+                            <p>1. Which programming languages are commonly used for server-side scripting in web development?</p>
+                            <ul class="choices">
+                                <li><h:selectOneRadio value="#{quizBean.q1}">
+                                    <f:selectItem itemValue="A" itemLabel="A. Python"/>
+                                    <f:selectItem itemValue="B" itemLabel="B. HTML"/>
+                                    <f:selectItem itemValue="C" itemLabel="C. JavaScript"/>
+                                    <f:selectItem itemValue="D" itemLabel="D. CSS"/>
+                                </h:selectOneRadio></li>
+                            </ul>
+                        </div>
+                        <div class="question">
+                            <p>2. Which of the following is a popular relational database management system (RDBMS) used in backend development?</p>
+                            <ul class="choices">
+                                <li><h:selectOneRadio value="#{quizBean.q2}">
+                                    <f:selectItem itemValue="A" itemLabel="A. MongoDB"/>
+                                    <f:selectItem itemValue="B" itemLabel="B. Firebase"/>
+                                    <f:selectItem itemValue="C" itemLabel="C. Redis"/>
+                                    <f:selectItem itemValue="D" itemLabel="D. PostgreSQL"/>
+                                </h:selectOneRadio></li>
+                            </ul>
+                        </div>
+                        <div class="question">
+                            <p>3. Which tool or platform is commonly used for deploying backend applications to servers?</p>
+                            <ul class="choices">
+                                <li><h:selectOneRadio value="#{quizBean.q3}">
+                                    <f:selectItem itemValue="A" itemLabel="A. GitHub Pages"/>
+                                    <f:selectItem itemValue="B" itemLabel="B. Heroku"/>
+                                    <f:selectItem itemValue="C" itemLabel="C. Netlify"/>
+                                    <f:selectItem itemValue="D" itemLabel="D. AWS S3"/>
+                                </h:selectOneRadio></li>
+                            </ul>
+                        </div>
+                        <div class="question">
+                            <p>4. What does REST stand for in the context of backend development?</p>
+                            <ul class="choices">
+                                <li><h:selectOneRadio value="#{quizBean.q4}">
+                                    <f:selectItem itemValue="A" itemLabel="A. Representational State Transfer"/>
+                                    <f:selectItem itemValue="B" itemLabel="B. Remote Server Technology"/>
+                                    <f:selectItem itemValue="C" itemLabel="C. Responsive Site Techniques"/>
+                                    <f:selectItem itemValue="D" itemLabel="D. Real-time Execution Script"/>
+                                </h:selectOneRadio></li>
+                            </ul>
+                        </div>
+                        <div class="question">
+                            <p>5. Which method is commonly used to authenticate users in a backend application?</p>
+                            <ul class="choices">
+                                <li><h:selectOneRadio value="#{quizBean.q5}">
+                                    <f:selectItem itemValue="A" itemLabel="A. OAuth"/>
+                                    <f:selectItem itemValue="B" itemLabel="B. JWT"/>
+                                    <f:selectItem itemValue="C" itemLabel="C. Basic Authentication"/>
+                                    <f:selectItem itemValue="D" itemLabel="D. All of the above"/>
+                                </h:selectOneRadio></li>
+                            </ul>
+                        </div>
+                        <h:commandButton value="Submit" action="#{quizBean.checkAnswers}" styleClass="submit-button"/>
+                    </h:form>
+                    <h:outputText id="results" value="#{quizBean.results}"/>
+                </div>
+            </div>
+        </section>
+        <!-- Exercise section end -->
+
+        
+        <!-- Review section end -->
+        </ui:define>
+    </ui:composition>
+</html>

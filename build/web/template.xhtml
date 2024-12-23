@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title><ui:insert name="title">Study Room</ui:insert></title>
+        <link rel="stylesheet" href="./resources/css/style.css"/>
+<!--        <style>
+            .heading{
+                margin-bottom: 2rem;
+                margin-left:  2rem;
+                margin-right:  2rem;
+                margin-top:  5rem;
+            }
+        </style>-->
+
+
+    </head>
+    <body>
+        <!-- Navbar -->
+        <header>
+            <input type="checkbox" name="" id="toggler"/>
+            <label for="toggler" class="bars">≡</label>
+            <a href="#" class="logo">Study<span>Room.</span></a>
+            <nav class="navbar">
+                <h:link outcome="index.xhtml" value="Home"/>
+                <h:link outcome="courses.xhtml" value="Courses"/>
+                <h:link outcome="material.xhtml" value="Material"/>
+            </nav>
+
+            <div class="icons">
+                <!-- Jika pengguna belum login, tampilkan ikon login -->
+                <h:link outcome="login.xhtml" rendered="#{loginBean.username == null}">
+                    <img src="resources/img/user-2.png" 
+                         onmouseover="this.src = 'resources/img/user-1.png'" 
+                         onmouseout="this.src = 'resources/img/user-2.png'" 
+                         alt=""/>
+                </h:link>
+
+                <!-- Jika pengguna sudah login, tampilkan tombol logout -->
+                <h:form>
+                    <h:commandLink action="#{loginBean.logout}" value="Logout" styleClass="btn-logout" rendered="#{loginBean.username != null}" />
+                </h:form>
+
+                <!-- Tampilkan username yang sedang login -->
+                <h:outputText id="username-display" value="#{loginBean.username.toUpperCase()}" styleClass="username-display" rendered="#{loginBean.username != null}" />
+            </div>
+
+        </header>
+        <!-- End Navbar -->
+
+        <!-- Main Content -->
+        <section class="main-content">
+            <ui:insert name="content">Default Content</ui:insert>
+        </section>
+
+        <!-- Footer -->
+        <section class="footer" id="footer">
+            <div class="box-container">
+                <div class="box">
+                    <h3>RoomStudy</h3>
+                    <a href="">About</a>
+                    <a href="">Career</a>
+                    <a href="">Partnership</a>
+                    <a href="">Blog</a>
+                </div>
+                <div class="box">
+                    <h3>Location</h3>
+                    <a href="">Indonesia</a>
+                    <a href="">Singapore</a>
+                    <a href="">Japan</a>
+                    <a href="">China</a>
+                </div>
+                <div class="box">
+                    <h3>Contact Info</h3>
+                    <a href="">+62-111-1111-1111</a>
+                    <a href="">abc@gmail.com</a>
+                    <a href="">Jakarta, Indonesia - 453267</a>
+                </div>
+                <div class="box">
+                    <h3>Product</h3>
+                    <a href="">Front-end</a>
+                    <a href="">frame-work</a>
+                    <a href="">Back-end</a>
+                </div>
+            </div>
+            <div class="credit"> Created by <span> Grup 9 3SE4 </span> | on 2024 </div>
+        </section>
+        <!-- End Footer -->
+
+    </body>
+</html>

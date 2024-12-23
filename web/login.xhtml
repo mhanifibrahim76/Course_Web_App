@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Login</title>
+        <link rel="stylesheet" href="./resources/css/style.css" />
+    </head>
+    <body>
+        <section class="login" id="login">
+            <div class="container">
+                <img src="resources/img/bg-home.jpg" alt="" />
+                <h:form id="loginForm">
+                    <h1 class="header-text">Login</h1>
+
+                    <!-- Elemen ini akan menampilkan semua pesan kesalahan yang ada -->
+                    <h:messages styleClass="error" globalOnly="true" />
+
+                    <div class="input-group">
+                        <!-- Input untuk username dengan placeholder -->
+                        <h:inputText value="#{loginBean.username}" id="username" required="true" requiredMessage="Username wajib diisi">
+                            <f:passThroughAttribute name="placeholder" value="Enter your username" />
+                        </h:inputText>
+                        <h:message for="username" styleClass="error" />
+
+                        <!-- Input untuk password dengan placeholder -->
+                        <h:inputSecret value="#{loginBean.password}" id="password" required="true" requiredMessage="Password wajib diisi">
+                            <f:passThroughAttribute name="placeholder" value="Enter your password" />
+                        </h:inputSecret>
+                        <h:message for="password" styleClass="error" />
+
+                        <!-- Tombol login -->
+                        <h:commandButton value="Login" styleClass="btn" action="#{loginBean.validasiLogin}" />
+                    </div>
+
+                    <p>Don't have an account? <h:link outcome="register.xhtml" value="Register here" /></p>
+                </h:form>
+            </div>
+        </section>
+    </body>
+</html>

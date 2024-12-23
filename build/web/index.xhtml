@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      lang="en" >
+    <ui:composition template="template.xhtml">
+        <ui:define name="title">Home - Study Room</ui:define>
+
+        <ui:define name="content">
+            <!-- Home Section -->
+            <section class="home" id="home">
+                <div class="content">
+                    <img src="resources/img/bg-home.jpg" alt="Background Image" class="background-img" />
+                    <h3>Web Developer</h3>
+                    <span>Learn From Beginner, intermediate, and advance</span>
+                    <p>Web development is the process of creating websites and web applications that are accessible over the internet...</p>
+                    <a href="#about" class="btn">Show More</a>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section class="about" id="about">
+                <h1 class="heading"> About <span> Us </span></h1>
+                <div class="row">
+                    <div class="video-container">
+                        <video src="resources/img/about-video.mp4" loop="true" autoplay="true" muted="true"/>
+                        <h3>Best Course Ever</h3>
+                    </div>
+                    <div class="content">
+                        <h3>Why Choose Us</h3>
+                        <p>We StudyRoom is committed to providing creative and innovative solutions in the digital world. With years of experience, we have become a trusted partner for businesses to grow their online presence. Our team of design experts, web developers and digital marketing specialists are dedicated to delivering solutions that can turn your vision into reality.</p>
+                <p>From responsive website development to effective digital marketing strategies, we are ready to help you achieve your business goals. We believe that every project is an opportunity to create something special, and we are committed to providing excellent service with a focus on innovation, reliability, and customer satisfaction. Contact us today to start a collaboration that can elevate your business to the next level.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Review section start -->
+
+            <section class="review" id="review">
+
+                <h1 class="heading"> Customer's <span> Review </span> </h1>
+
+                <!-- Form untuk mengirim review dan rating -->
+
+                <!-- Menampilkan Review dan Rating -->
+                <div class="box-container">
+                    <ui:repeat value="#{reviewBean.allComments}" var="review">
+                        <div class="box">
+                            <div class="star">
+                                <h:outputText value="⭐" rendered="#{review.rating >= 1}" styleClass="icon-star" />
+                                <h:outputText value="⭐" rendered="#{review.rating >= 2}" styleClass="icon-star" />
+                                <h:outputText value="⭐" rendered="#{review.rating >= 3}" styleClass="icon-star" />
+                                <h:outputText value="⭐" rendered="#{review.rating >= 4}" styleClass="icon-star" />
+                                <h:outputText value="⭐" rendered="#{review.rating >= 5}" styleClass="icon-star" />
+                            </div>
+                            <p><h:outputText value="#{review.comment}" /></p>
+                            <div class="user">
+                                <div class="user-info">
+                                    <h3><h:outputText value="#{review.username}" /></h3>
+                                    <span>Customer</span>
+                                </div>
+                            </div>
+                        </div>
+                    </ui:repeat>
+                </div>
+
+            </section>
+
+
+            <!-- Review section start -->
+        </ui:define>
+    </ui:composition>
+</html>

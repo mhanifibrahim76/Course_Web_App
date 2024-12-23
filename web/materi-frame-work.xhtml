@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      lang="en" >
+    <ui:composition template="template.xhtml">
+        <ui:define name="title">Home - Study Room</ui:define>
+
+        <ui:define name="content">
+            <!-- Material section start -->
+            <section class="material" id="material">
+                <h1 class="heading"> Course <span> Material </span> </h1>
+                <div class="box-container">
+                    <div class="box">
+                        <h2>Website</h2>
+                        <p>A website is a collection of interconnected web pages that are hosted on a web server and accessible via the internet. Websites are designed to provide information, services, or a combination of both to users. They can range from simple static pages to complex interactive applications.</p>
+                    </div>
+                    <div class="box">
+                        <h2>HTML (HyperText Markup Language)</h2>
+                        <p>HTML (HyperText Markup Language) is the standard language used to create and structure content on the web. It provides the foundational elements that form a web page's structure, including text, images, links, and other multimedia content. HTML is composed of a series of elements and tags that tell the web browser how to display and structure the content.</p>
+                    </div>
+                    <div class="box">
+                        <h2>CSS (Cascading Style Sheets)</h2>
+                        <p>CSS (Cascading Style Sheets) is a stylesheet language used to describe the presentation and design of a document written in HTML or XML. CSS is responsible for how the content on a web page looks, including layout, colors, fonts, and overall visual styling. It separates the content (HTML) from the visual design, allowing for cleaner and more maintainable code.</p>
+                    </div>
+                    <div class="box">
+                        <h2>JS (JavaScript)</h2>
+                        <p>JavaScript (often abbreviated as JS) is a high-level, dynamic, and interpreted programming language that is widely used to create interactive and dynamic content on websites. JavaScript is an essential part of web development, alongside HTML and CSS, and enables the creation of more engaging user experiences by allowing developers to implement complex features on web pages.</p>
+                    </div>
+                </div>
+            </section>
+            <!-- Material section end -->
+
+            <!-- Exercise section start -->
+            <section class="exercise" id="exercise">
+                <h1 class="heading"> Exercise <span> Material </span> </h1>
+                <div class="material-box">
+                    <div class="box-container">
+                        <h:form id="quizForm">
+                            <div class="question">
+                                <p>1. Which of the following tags is used to create a hyperlink in HTML?</p>
+                                <ul class="choices">
+                                    <li><h:selectOneRadio value="#{quizBean.q1}">
+                                            <f:selectItem itemValue="A" itemLabel="A. a"/>
+                                            <f:selectItem itemValue="B" itemLabel="B. img"/>
+                                            <f:selectItem itemValue="C" itemLabel="C. link"/>
+                                            <f:selectItem itemValue="D" itemLabel="D. href"/>
+                                        </h:selectOneRadio></li>
+                                </ul>
+                            </div>
+                            <div class="question">
+                                <p>2. Which CSS property is used to change the text color of an element?</p>
+                                <ul class="choices">
+                                    <li><h:selectOneRadio value="#{quizBean.q2}">
+                                            <f:selectItem itemValue="A" itemLabel="A. font-color"/>
+                                            <f:selectItem itemValue="B" itemLabel="B. text-color"/>
+                                            <f:selectItem itemValue="C" itemLabel="C. text-style"/>
+                                            <f:selectItem itemValue="D" itemLabel="D. color"/>
+                                        </h:selectOneRadio></li>
+                                </ul>
+                            </div>
+                            <div class="question">
+                                <p>3. Which keyword is used to declare a variable in JavaScript?</p>
+                                <ul class="choices">
+                                    <li><h:selectOneRadio value="#{quizBean.q3}">
+                                            <f:selectItem itemValue="A" itemLabel="A. var"/>
+                                            <f:selectItem itemValue="B" itemLabel="B. All of the above"/>
+                                            <f:selectItem itemValue="C" itemLabel="C. let"/>
+                                            <f:selectItem itemValue="D" itemLabel="D. const"/>
+                                        </h:selectOneRadio></li>
+                                </ul>
+                            </div>
+                            <div class="question">
+                                <p>4. Which tag is used to define an unordered list in HTML?</p>
+                                <ul class="choices">
+                                    <li><h:selectOneRadio value="#{quizBean.q4}">
+                                            <f:selectItem itemValue="A" itemLabel="A. ul"/>
+                                            <f:selectItem itemValue="B" itemLabel="B. li"/>
+                                            <f:selectItem itemValue="C" itemLabel="C. ol"/>
+                                            <f:selectItem itemValue="D" itemLabel="D. dl"/>
+                                        </h:selectOneRadio></li>
+                                </ul>
+                            </div>
+                            <div class="question">
+                                <p>5. Which of the following is the correct CSS syntax to select an element with the id "header"?</p>
+                                <ul class="choices">
+                                    <li><h:selectOneRadio value="#{quizBean.q5}">
+                                            <f:selectItem itemValue="A" itemLabel="A. .header"/>
+                                            <f:selectItem itemValue="B" itemLabel="B. *header"/>
+                                            <f:selectItem itemValue="C" itemLabel="C. header"/>
+                                            <f:selectItem itemValue="D" itemLabel="D. #header"/>
+                                        </h:selectOneRadio></li>
+                                </ul>
+                            </div>
+                            <h:commandButton value="Submit" action="#{quizBean.checkAnswers}" styleClass="submit-button">
+                                <f:ajax render="results"/>
+                            </h:commandButton>
+                        </h:form>
+                        <h:panelGroup id="results">
+                            <h:outputText value="#{quizBean.results}" />
+                        </h:panelGroup>
+                    </div>
+                </div>
+            </section>
+            <!-- Exercise section start -->
+
+           
+            <!-- Review section end -->
+
+</ui:define>
+</ui:composition>
+</html>

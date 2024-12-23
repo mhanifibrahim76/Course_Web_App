@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      lang="en" >
+    <ui:composition template="template.xhtml">
+        <ui:define name="title">Home - Study Room</ui:define>
+
+        <ui:define name="content">
+            <!-- Home Section -->
+            <section class="home" id="home">
+                <div class="content">
+                    <img src="resources/img/bg-home.jpg" alt="Background Image" class="background-img" />
+                    <h3>Web Developer</h3>
+                    <span>Learn From Beginner, intermediate, and advance</span>
+                    <p>Web development is the process of creating websites and web applications that are accessible over the internet...</p>
+                    <a href="#about" class="btn">Show More</a>
+                </div>
+            </section>
+
+            <!-- Material section start -->
+            <h:panelGroup layout="block" styleClass="product" id="Product">
+
+                <h1 class="heading">Purchased <span>Courses</span></h1>
+
+                <h:panelGroup layout="block" class="box-container">
+
+                    <!-- Front-End Course Box (courseID = 1) -->
+                    <h:panelGroup rendered="#{purchaseBean.hasPurchasedCourse(1)}">
+                        <h:form>
+                            <h:panelGroup layout="block" class="box">
+
+                                <!-- Course Image -->
+                                <h:panelGroup layout="block" class="image">
+                                    <h:graphicImage library="img" name="front-end.jpg" alt="Front-End" />
+
+                                    <!-- Access button if the course is purchased -->
+                                    <h:panelGroup layout="block" class="icon">
+                                        <h:commandButton value="Access Course" styleClass="btn"
+                                                         action="materi-front-end.xhtml?faces-redirect=true" />
+                                    </h:panelGroup>
+                                </h:panelGroup>
+
+                                <!-- Course Title -->
+                                <h:panelGroup layout="block" class="content">
+                                    <h3>Front-End</h3>
+                                </h:panelGroup>
+
+                            </h:panelGroup>
+                        </h:form>
+                    </h:panelGroup>
+
+                    <!-- Back-End Course Box (courseID = 2) -->
+                    <h:panelGroup rendered="#{purchaseBean.hasPurchasedCourse(2)}">
+                        <h:form>
+                            <h:panelGroup layout="block" class="box">
+
+                                <!-- Course Image -->
+                                <h:panelGroup layout="block" class="image">
+                                    <h:graphicImage library="img" name="back-end.jpg" alt="back-End" />
+
+                                    <!-- Access button if the course is purchased -->
+                                    <h:panelGroup layout="block" class="icon">
+                                        <h:commandButton value="Access Course" styleClass="btn"
+                                                         action="materi-back-end.xhtml?faces-redirect=true" />
+                                    </h:panelGroup>
+                                </h:panelGroup>
+
+                                <!-- Course Title -->
+                                <h:panelGroup layout="block" class="content">
+                                    <h3>Back-End</h3>
+                                </h:panelGroup>
+
+                            </h:panelGroup>
+                        </h:form>
+                    </h:panelGroup>
+
+                    <!-- Framework Course Box (courseID = 3) -->
+                    <h:panelGroup rendered="#{purchaseBean.hasPurchasedCourse(3)}">
+                        <h:form>
+                            <h:panelGroup layout="block" class="box">
+
+                                <!-- Course Image -->
+                                <h:panelGroup layout="block" class="image">
+                                    <h:graphicImage library="img" name="frame-work.jpg" alt="Frame-Work" />
+
+                                    <!-- Access button if the course is purchased -->
+                                    <h:panelGroup layout="block" class="icon">
+                                        <h:commandButton value="Access Course" styleClass="btn"
+                                                         action="materi-frame-work.xhtml?faces-redirect=true" />
+                                    </h:panelGroup>
+                                </h:panelGroup>
+
+                                <!-- Course Title -->
+                                <h:panelGroup layout="block" class="content">
+                                    <h3>Frame-Work</h3>
+                                </h:panelGroup>
+
+                            </h:panelGroup>
+                        </h:form>
+                    </h:panelGroup>
+
+                </h:panelGroup>
+
+            </h:panelGroup>
+            <!-- Material section end -->
+
+            <!-- Review section start -->
+            <section class="review" id="review">
+                <h1 class="heading"> Add <span> Review </span> </h1>
+                <div class="container">
+                    <h1>Input Comment</h1>
+                    <h:form class="comment-form">
+                        <h:inputTextarea id="commentInput" value="#{reviewBean.comment}">
+                            <f:passThroughAttribute name="placeholder" value="Add a comment..."/>
+                        </h:inputTextarea>
+                        <div class="rating-input">
+                            <span>Rating: </span>
+                            <h:selectOneMenu id="ratingInput" value="#{reviewBean.rating}">
+                                <f:selectItem itemValue="1" itemLabel="1"/>
+                                <f:selectItem itemValue="2" itemLabel="2"/>
+                                <f:selectItem itemValue="3" itemLabel="3"/>
+                                <f:selectItem itemValue="4" itemLabel="4"/>
+                                <f:selectItem itemValue="5" itemLabel="5"/>
+                            </h:selectOneMenu>
+                        </div>
+
+                        <!-- Kondisi ketika user belum pernah berkomentar -->
+                        <h:panelGroup rendered="#{!reviewBean.hasUserCommented(reviewBean.sessionController.loggedInUser.id)}">
+                            <h:commandButton value="Add Comment" action="#{reviewBean.addComment}" styleClass="submit-button" />
+                        </h:panelGroup>
+                        <!-- Kondisi ketika user sedang mengedit komentar -->
+                        <h:panelGroup rendered="#{reviewBean.commentId != 0}">
+                            <h:commandButton value="Update Comment" action="#{reviewBean.updateComment}" styleClass="submit-button" />
+                        </h:panelGroup>
+                    </h:form>
+
+                    <h:form>
+                        <h:dataTable value="#{reviewBean.reviews}" var="comment">
+                            <h:column>
+                                <f:facet name="header">Comment</f:facet>
+                                    #{comment.comment}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Rating</f:facet>
+                                    #{comment.rating}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Actions</f:facet>
+
+                                <!-- Menampilkan tombol Edit dan Delete hanya jika user sudah berkomentar -->
+                                <h:panelGroup rendered="#{reviewBean.hasUserCommented(reviewBean.sessionController.loggedInUser.id)}">
+                                    <h:commandButton value="Edit" action="#{reviewBean.editComment(comment)}" styleClass="submit-button" />
+                                    <h:commandButton value="Delete" action="#{reviewBean.deleteComment(comment)}" styleClass="submit-button" />
+                                </h:panelGroup>
+
+                            </h:column>
+                        </h:dataTable>
+                    </h:form>
+                </div>
+            </section>
+
+
+            <!-- Review section end -->
+
+        </ui:define>
+    </ui:composition>
+</html>
